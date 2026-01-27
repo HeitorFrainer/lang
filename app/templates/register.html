@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Lang - Level Up Your Language</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="register-container">
+    <div class="logo">Lang_</div>
+    <p class="subtitle">Start your language learning adventure.</p>
+    
+    <form method="POST">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Choose your quest name..." required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="••••••••" required>
+            <div class="password-info">At least 8 characters recommended</div>
+        </div>
+
+        <div class="form-group">
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="••••••••" required>
+        </div>
+        
+        <button type="submit" class="btn-register">Begin Quest</button>
+    </form>
+
+    <div class="footer-links">
+        <p>Already have an account? <a href="{{ url_for('main.login') }}">Login here</a></p>
+    </div>
+</div>
+
+</body>
+</html>

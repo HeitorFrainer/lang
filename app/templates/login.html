@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lang - Level Up Your Language</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="logo">Lang_</div>
+    <p class="subtitle">Complete quests, master languages.</p>
+    
+    <form>
+        <div class="form-group">
+            <label>Username or Email</label>
+            <input type="text" placeholder="Enter your quest name..." required>
+        </div>
+        
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" placeholder="••••••••" required>
+        </div>
+        
+        <button type="submit" class="btn-login">Start Mission</button>
+    </form>
+
+    <div class="footer-links">
+        <p>New explorer? <a href="{{ url_for('main.register') }}">Create an account</a></p>
+        <p><a href="#">Forgot password?</a></p>
+    </div>
+</div>
+
+</body>
+</html>

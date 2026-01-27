@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Game - Level {{ level.level_number }}{% endblock %}
+
+{% block content %}
+<div class="game-container">
+    <div class="game-header">
+        <h2>Level {{ level.level_number }}</h2>
+        <div class="score">Score: <span id="score">0</span></div>
+    </div>
+    
+    <div class="chat-container">
+        <div id="chat-messages" class="chat-messages">
+            <div class="message bot-message">
+                <p>Welcome to Level {{ level.level_number }}! Let's practice a conversation.</p>
+            </div>
+        </div>
+        
+        <div class="chat-input-wrapper">
+            <form id="chat-form" class="chat-form">
+                <input 
+                    type="text" 
+                    id="message-input" 
+                    placeholder="Type your response..." 
+                    required
+                >
+                <button type="submit" class="btn-send">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='chat.js') }}"></script>
+{% endblock %}

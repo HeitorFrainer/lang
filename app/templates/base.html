@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Language Learning Game{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>🌍 Language Learning Game</h1>
+            {% if current_user.is_authenticated %}
+            <div class="user-menu">
+                <span>Welcome, {{ current_user.username }}</span>
+                <a href="{{ url_for('main.logout') }}">Logout</a>
+            </div>
+            {% endif %}
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Language Learning Game. Aprenda idiomas jogando!</p>
+    </footer>
+</body>
+</html>
