@@ -11,7 +11,8 @@ def create_app():
     
     db.init_app(app)
     login_manager.init_app(app)
-    login_manager.login_view = 'login'
+    login_manager.login_view = 'main.login'
+    login_manager.login_message = 'Please log in to access this page.'
     
     from app.routes import main_bp
     app.register_blueprint(main_bp)

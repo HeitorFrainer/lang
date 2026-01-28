@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lang - Level Up Your Language</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
@@ -12,15 +24,21 @@
     <div class="logo">Lang_</div>
     <p class="subtitle">Complete quests, master languages.</p>
     
-    <form>
+    {% if error %}
+    <div class="error-message">
+        {{ error }}
+    </div>
+    {% endif %}
+    
+    <form method="POST" action="{{ url_for('main.login') }}">
         <div class="form-group">
             <label>Username or Email</label>
-            <input type="text" placeholder="Enter your quest name..." required>
+            <input type="text" name="username" placeholder="Enter your quest name..." required>
         </div>
         
         <div class="form-group">
             <label>Password</label>
-            <input type="password" placeholder="••••••••" required>
+            <input type="password" name="password" placeholder="••••••••" required>
         </div>
         
         <button type="submit" class="btn-login">Start Mission</button>
